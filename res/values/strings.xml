@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Yamba</string>
+    <string name="textStatusUpdate">Status Update</string>
+    <string name="textEditHint">Please enter your 140 characters status message.</string>
+    <string name="buttonUpdate">Update</string>
+    <string name="msgStatusUpdatedSuccessfully">Status updated successfully</string>
+    <string name="msgStatusUpdateFailed">Status updated failed</string>
+    <string name="start_service">Start Service</string>
+    <string name="stop_service">Stop Service</string>
+    <string name="refresh_service">Refresh Service</string>
+    <string name="username">Username</string>
+    <string name="username_summary">Enter your online username</string>
+    <string name="password">Password</string>
+    <string name="password_summary">Enter your online password</string>
+    <string name="server">Server</string>
+    <string name="server_summary">Enter your server API root</string>
+    <string name="title_activity_prefs">PrefsActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="preferences">Preferences</string>
+    <string name="consumerKey">Consumer Key</string>
+    <string name="consumerSecret">Consumer secret</string>
+    <string name="accessToken">Access token</string>
+    <string name="accessSecret">Access secret</string>
+    <string name="delay">How frequently check for updates</string>
+    <string name="delay_summary">Set delays beetween consecutive updates.</string>
+    <string-array name="delays">
+        <item >30 seconds</item>
+        <item >1 minute</item>
+        <item >3 minutes</item>
+        <item >5 minutes</item>
+    </string-array>
+    <string-array name="delay_values">
+        <item >30</item>
+        <item >60</item>
+        <item >180</item>
+        <item >300</item>
+    </string-array>
+        <string name="timeline">Timeline</string>
+
+</resources>
