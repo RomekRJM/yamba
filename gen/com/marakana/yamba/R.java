@@ -21,11 +21,11 @@ public final class R {
     public static final class id {
         public static final int buttonUpdate=0x7f090005;
         public static final int editStatus=0x7f090004;
-        public static final int item_prefs=0x7f09000a;
+        public static final int item_prefs=0x7f090008;
         public static final int item_refresh_service=0x7f090009;
-        public static final int item_start_service=0x7f090007;
-        public static final int item_stop_service=0x7f090008;
-        public static final int item_timeline=0x7f09000b;
+        public static final int item_start_service=0x7f09000a;
+        public static final int item_status_update=0x7f090007;
+        public static final int item_stop_service=0x7f09000b;
         public static final int list=0x7f090006;
         public static final int textView1=0x7f090003;
         public static final int text_created_at=0x7f090001;
@@ -59,6 +59,7 @@ public final class R {
         public static final int server=0x7f05000d;
         public static final int server_summary=0x7f05000e;
         public static final int start_service=0x7f050006;
+        public static final int status_update=0x7f050019;
         public static final int stop_service=0x7f050007;
         public static final int textEditHint=0x7f050002;
         public static final int textStatusUpdate=0x7f050001;

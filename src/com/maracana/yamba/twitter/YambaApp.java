@@ -3,6 +3,7 @@ package com.maracana.yamba.twitter;
 import com.marakana.yamba.StatusData;
 
 import android.app.Application;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.preference.PreferenceManager;
@@ -16,6 +17,7 @@ import twitter4j.conf.ConfigurationBuilder;
 
 public class YambaApp extends Application implements OnSharedPreferenceChangeListener {
 	private static final String TAG = "TwitterAccessor";
+	public static final String ACTION_NEW_STATUS = "com.example.yamba.status";
 	
 	private static Twitter twitter;
 	public static SharedPreferences prefs;
@@ -71,6 +73,41 @@ public class YambaApp extends Application implements OnSharedPreferenceChangeLis
 			Log.e(TAG, e.getErrorMessage());
 		}
 
+	}
+	
+	long lastTimeSeen = -1l;
+	
+	public ResponseList<Status> pullAndInsert() {
+		ResponseList<Status> list = YambaApp.getUserTimeline();
+		int count = 0;
+		long biggestTimestamp = -1;
+
+		try {
+			if (list != null) {
+				for (Status status : list) {
+					statusData.insert(status);
+					
+					if(status.getCreatedAt().getTime() > lastTimeSeen) {
+						count++;
+						biggestTimestamp = (status.getCreatedAt().getTime() > biggestTimestamp) ? 
+								status.getCreatedAt().getTime() : biggestTimestamp;
+						Log.d(TAG, String.format("%s, %s", status.getUser()
+								.getName(), status.getText()));
+					}
+					
+				}
+			}
+		} catch (Exception e) {
+			Log.e(TAG, "Failes to access twitter service", e);
+		}
+		
+		if(count > 0) {
+			sendBroadcast(new Intent(ACTION_NEW_STATUS).putExtra("count", count));
+		}
+		
+		lastTimeSeen = biggestTimestamp;
+		
+		return list;
 	}
 
 	@Override

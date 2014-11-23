@@ -23,23 +23,13 @@ public class UpdaterService extends Service {
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
 		Log.d(TAG, "onStarted");
-		final StatusData statusData = ((YambaApp)getApplication()).statusData;
 		
 		update = true;
 
 		new Thread() {
 			public void run() {
 				while (update) {
-					ResponseList<Status> list = YambaApp
-							.getUserTimeline();
-					if (list != null) {
-						for (Status status : list) {
-							Log.d(TAG, String.format("%s, %s", status.getUser()
-									.getName(), status.getText()));
-							statusData.insert(status);
-						}
-					}
-					
+					((YambaApp)getApplication()).pullAndInsert();
 					try {
 						Thread.sleep(getDelay());
 					} catch (InterruptedException e) {
