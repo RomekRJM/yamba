@@ -27,17 +27,22 @@
     <string name="delay_summary">Set delays beetween consecutive updates.</string>
     <string-array name="delays">
         <item >30 seconds</item>
-        <item >1 minute</item>
-        <item >3 minutes</item>
-        <item >5 minutes</item>
+        <item >15 minutes</item>
+        <item >30 minutes</item>
+        <item >1 hour</item>
+        <item >Half a day</item>
+        <item >Once a day</item>
     </string-array>
     <string-array name="delay_values">
-        <item >30</item>
-        <item >60</item>
-        <item >180</item>
-        <item >300</item>
+        <item >30000</item>
+        <item >900000</item>
+        <item >1800000</item>
+        <item >3600000</item>
+        <item >43200000</item>
+        <item >86400000</item>
     </string-array>
         <string name="timeline">Timeline</string>
         <string name="status_update">Status update</string>
+        <string name="fake_boot">Send fake boot intent</string>
 
 </resources>

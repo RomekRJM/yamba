@@ -18,6 +18,9 @@ import twitter4j.conf.ConfigurationBuilder;
 public class YambaApp extends Application implements OnSharedPreferenceChangeListener {
 	private static final String TAG = "TwitterAccessor";
 	public static final String ACTION_NEW_STATUS = "com.example.yamba.status";
+	public static final String ACTION_REFRESH = "com.example.yamba.RefreshService";
+	public static final String ACTION_FAKE_BOOT = "com.marakana.yamba.FAKE_BOOT";
+	public static final String ACTION_REFRESH_ALARM = "com.marakana.yamba.REFRESH_ALARM";
 	
 	private static Twitter twitter;
 	public static SharedPreferences prefs;
@@ -110,10 +113,12 @@ public class YambaApp extends Application implements OnSharedPreferenceChangeLis
 		return list;
 	}
 
+	static final Intent refreshAlarm = new Intent(ACTION_REFRESH_ALARM);
 	@Override
 	public void onSharedPreferenceChanged(SharedPreferences sharedPreferences,
 			String key) {
 			twitter = null;
+			sendBroadcast(refreshAlarm);
 			Log.d(TAG, "sharedPreferences has changed for key: " + key);
 	}
 }

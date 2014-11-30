@@ -1,8 +1,5 @@
 package com.marakana.yamba;
 
-import twitter4j.ResponseList;
-import twitter4j.Status;
-
 import com.maracana.yamba.twitter.YambaApp;
 
 import android.app.Service;

@@ -37,10 +37,15 @@
         <service android:name=".UpdaterService" >
         </service>
         <service android:name=".RefreshService" >
+            <intent-filter>
+                <action android:name="com.marakana.yamba.RefreshService"/>
+            </intent-filter>
         </service>
 
-        <receiver android:name="BootReciever" >
+        <receiver android:name=".RefreshScheduleReceiver" >
             <intent-filter>
+                <action android:name="com.marakana.yamba.REFRESH_ALARM" />
+                <action android:name="com.marakana.yamba.FAKE_BOOT" />
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>

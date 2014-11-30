@@ -10,6 +10,7 @@
         android:id="@+id/item_stop_service"
         android:title="@string/stop_service">
     </item>
+    <item android:id="@+id/item_fake_boot" android:title="@string/fake_boot"></item>
     
     
     

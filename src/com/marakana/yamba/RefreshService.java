@@ -18,17 +18,4 @@ public class RefreshService extends IntentService {
 	protected void onHandleIntent(Intent intent) {
 		((YambaApp)getApplication()).pullAndInsert();
 	}
-
-	@Override
-	public void onCreate() {
-		Log.d(TAG, "onCreate");
-		super.onCreate();
-	}
-
-	@Override
-	public void onDestroy() {
-		Log.d(TAG, "onDestroy");
-		super.onDestroy();
-	}
-
 }

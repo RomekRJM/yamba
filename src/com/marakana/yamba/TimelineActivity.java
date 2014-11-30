@@ -18,7 +18,6 @@ import android.widget.SimpleCursorAdapter;
 import android.widget.SimpleCursorAdapter.ViewBinder;
 import android.widget.TextView;
 
-//24 22:05
 public class TimelineActivity extends ListActivity {
 	static final String TAG = "TimelineActivity";
 	static final String[] FROM = { StatusData.C_USER, StatusData.C_TEXT,
@@ -87,6 +86,9 @@ public class TimelineActivity extends ListActivity {
 		case R.id.item_status_update:
 			startActivity(status);
 			return true;
+		case R.id.item_fake_boot:
+			sendBroadcast(new Intent(YambaApp.ACTION_FAKE_BOOT));
+			return true;
 		default:
 			return false;
 		}
@@ -105,7 +107,9 @@ public class TimelineActivity extends ListActivity {
 	@Override
 	protected void onPause() {
 		super.onPause();
-		unregisterReceiver(receiver);
+		if(receiver != null) {
+			unregisterReceiver(receiver);
+		}
 	}
 
 

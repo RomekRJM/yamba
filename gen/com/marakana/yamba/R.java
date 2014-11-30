@@ -21,6 +21,7 @@ public final class R {
     public static final class id {
         public static final int buttonUpdate=0x7f090005;
         public static final int editStatus=0x7f090004;
+        public static final int item_fake_boot=0x7f09000c;
         public static final int item_prefs=0x7f090008;
         public static final int item_refresh_service=0x7f090009;
         public static final int item_start_service=0x7f09000a;
@@ -49,6 +50,7 @@ public final class R {
         public static final int consumerSecret=0x7f050013;
         public static final int delay=0x7f050016;
         public static final int delay_summary=0x7f050017;
+        public static final int fake_boot=0x7f05001a;
         public static final int hello_world=0x7f050010;
         public static final int msgStatusUpdateFailed=0x7f050005;
         public static final int msgStatusUpdatedSuccessfully=0x7f050004;
