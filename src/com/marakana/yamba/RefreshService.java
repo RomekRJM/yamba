@@ -4,7 +4,6 @@ import com.maracana.yamba.twitter.YambaApp;
 
 import android.app.IntentService;
 import android.content.Intent;
-import android.util.Log;
 
 public class RefreshService extends IntentService {
 
